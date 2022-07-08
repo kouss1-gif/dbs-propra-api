@@ -1,0 +1,126 @@
+Curl-Befehle:
+
+GET NUTZER : curl -X 'GET' \
+  'http://localhost:8080/nutzer?email=sam32%40gmail.com' \
+  -H 'accept: application/json;charset=UTF-8'
+
+POST NUTZER: curl -X 'POST' \
+  'http://localhost:8080/nutzer' \
+  -H 'accept: */*' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'email=lars@lars.com' \
+  -F 'passwort=D1wsdcfr'
+
+GET FANS: curl -X 'GET' \
+  'http://localhost:8080/fans?username=davido' \
+  -H 'accept: application/json;charset=UTF-8'
+
+POST FANS: curl -X 'POST' \
+  'http://localhost:8080/fans' \
+  -H 'accept: */*' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'email=def@def.com' \
+  -F 'passwort=D1wscfr' \
+  -F 'username=try'
+
+GET MITARBEITER: curl -X 'GET' \
+  'http://localhost:8080/mitarbeiter?personalnummer=111666' \
+  -H 'accept: application/json;charset=UTF-8'
+
+POST MTIARBEITER: curl -X 'POST' \
+  'http://localhost:8080/mitarbeiter' \
+  -H 'accept: */*' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'email=at@at.com' \
+  -F 'passwort=Efgh5t' \
+  -F 'personalnummer=123457'
+
+GET MANNSCHAFT: curl -X 'GET' \
+  'http://localhost:8080/mannschaften?name=Giants' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET SPIELE: curl -X 'GET' \
+  'http://localhost:8080/spiele?angeschaut=true' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET LIGEN: curl -X 'GET' \
+  'http://localhost:8080/ligen' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET LIGEN/LIGAID/SPIELE: curl -X 'GET' \
+  'http://localhost:8080/ligen/5/spiele' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET SPIELER: curl -X 'GET' \
+  'http://localhost:8080/spieler?nachname=john' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET REPORTAGE: curl -X 'GET' \
+  'http://localhost:8080/reportagen' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET SPIELER/SPIELID/VERLETZUNGEN: curl -X 'GET' \
+  'http://localhost:8080/spieler/28/verletzungen' \
+  -H 'accept: application/json;charset=UTF-8'
+
+GET FANS/FANID/MANNSCHAFT: curl -X 'GET' \
+  'http://localhost:8080/fans/1/mannschaft' \
+  -H 'accept: application/json;charset=UTF-8'
+
+
+POST SPIELE: curl -X 'POST' \
+  'http://localhost:8080/spiele' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ==' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'link=gas' \
+  -F 'datum="2022-02-02"' \
+  -F 'manschaft1id=29' \
+  -F 'manschaft2id=28' \
+  -F 'ligaid=6'
+
+POST REPORTAGEN: curl -X 'POST' \
+  'http://localhost:8080/reportagen' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ==' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'ueberschrift=raf' \
+  -F 'text=simons'
+
+PATCH REPORTAGEN/REPORTAGEID: curl -X 'PATCH' \
+  'http://localhost:8080/reportagen/20' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ==' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'ueberschrift=ayy' \
+  -F 'text=yoo'
+
+DELETE REPORTAGEN/REPORTAGEID: curl -X 'DELETE' \
+  'http://localhost:8080/reportagen/21' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ=='
+
+POST SPIELER/SPIELERID/VERLETZUNGEN: curl -X 'POST' \
+  'http://localhost:8080/spieler/30/verletzungen' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ==' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'art=Arm' \
+  -F 'dauer=44'
+
+POST FANS/FANID/MANNSCHAFT: curl -X 'POST' \
+  'http://localhost:8080/fans/1/mannschaft' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ==' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'mannschaftid=25'
+
+PATCH FANS/FANID/MANNSCHAFT: curl -X 'PATCH' \
+  'http://localhost:8080/fans/3/mannschaft' \
+  -H 'accept: */*' \
+  -H 'Authorization: Basic eW9ibzFAZ21haWwuY29tOkY0RjZXUQ==' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'mannschaftid=24'
+
+ 
+
